@@ -39,10 +39,21 @@ public class BasicGameApp implements Runnable {
    
 	public BufferStrategy bufferStrategy;
 	public Image a380Pic;
+    public Image b747Pic;
+    public Image b777Pic;
+    public Image a350Pic;
+    public Image lambo;
+    public Image car1;
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
 	private plane aircraft;
+    public plane aircraft1;
+    public plane aircraft2;
+    public plane aircraft3;
+    public plane car;
+    public plane lambo1;
+
 
 
    // Main method definition
@@ -65,6 +76,16 @@ public class BasicGameApp implements Runnable {
       //create (construct) the objects needed for the game and load up 
 		a380Pic = Toolkit.getDefaultToolkit().getImage("aqgame380.png"); //load the picture
 		aircraft = new plane(10,100);
+        a350Pic = Toolkit.getDefaultToolkit().getImage("aq350.png"); //load the picture
+        aircraft1 = new plane(30,100);
+        b747Pic = Toolkit.getDefaultToolkit().getImage("747.png"); //load the picture
+        aircraft2 = new plane(10,300);
+        b777Pic = Toolkit.getDefaultToolkit().getImage("777.png"); //load the picture
+        aircraft3 = new plane(10,200);
+        car1 = Toolkit.getDefaultToolkit().getImage("car1.png"); //load the picture
+        car = new plane(0,700);
+        lambo = Toolkit.getDefaultToolkit().getImage("lambo.png"); //load the picture
+        lambo1 = new plane(300,500);
 
 
 	}// BasicGameApp()
@@ -144,8 +165,12 @@ public class BasicGameApp implements Runnable {
 
       //draw the image of the aircraft
 		g.drawImage(a380Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
-
-		g.dispose();
+        g.drawImage(a350Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
+        g.drawImage(b777Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
+        g.drawImage(b747Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
+        g.drawImage(lambo, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
+        g.drawImage(car1, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
+        g.dispose();
 
 		bufferStrategy.show();
 	}

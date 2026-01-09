@@ -25,7 +25,7 @@ public class plane {
             ypos = pYpos;
             dx =1;
             dy =0;
-            width = 100;
+            width = 150;
             height = 60;
             isAlive = true;
 
