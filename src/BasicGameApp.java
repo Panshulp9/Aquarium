@@ -44,15 +44,17 @@ public class BasicGameApp implements Runnable {
     public Image a350Pic;
     public Image lambo;
     public Image car1;
+    public Image backgroundPic;
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
-	private plane aircraft;
-    public plane aircraft1;
-    public plane aircraft2;
-    public plane aircraft3;
-    public plane car;
-    public plane lambo1;
+	private Bounce aircraft;
+    public Bounce aircraft1;
+    public Bounce aircraft2;
+    public Bounce aircraft3;
+    public Car car;
+    public Car lambo1;
+
 
 
 
@@ -69,23 +71,27 @@ public class BasicGameApp implements Runnable {
    // This section is the setup portion of the program
    // Initialize your variables and construct your program objects here.
 	public BasicGameApp() {
-      
+        int randx = (int)(Math.random()*1000)+1;
+        int randy = (int)(Math.random()*700)+1;
       setUpGraphics();
        
       //variable and objects
-      //create (construct) the objects needed for the game and load up 
+      //create (construct) the objects needed for the game and load up
+        backgroundPic = Toolkit.getDefaultToolkit().getImage("sky+road.jpg");
 		a380Pic = Toolkit.getDefaultToolkit().getImage("aqgame380.png"); //load the picture
-		aircraft = new plane(10,100);
+		aircraft = new Bounce(50,50);
         a350Pic = Toolkit.getDefaultToolkit().getImage("aq350.png"); //load the picture
-        aircraft1 = new plane(30,100);
+        aircraft1 = new Bounce(30,150);
         b747Pic = Toolkit.getDefaultToolkit().getImage("747.png"); //load the picture
-        aircraft2 = new plane(10,300);
-        b777Pic = Toolkit.getDefaultToolkit().getImage("777.png"); //load the picture
-        aircraft3 = new plane(10,200);
+        aircraft2 = new Bounce(10,300);
+
+        b777Pic = Toolkit.getDefaultToolkit().getImage("2aq777.png"); //load the picture
+        aircraft3 = new Bounce(10,200);
+
         car1 = Toolkit.getDefaultToolkit().getImage("car1.png"); //load the picture
-        car = new plane(0,700);
+        car = new Car(0,600);
         lambo = Toolkit.getDefaultToolkit().getImage("lambo.png"); //load the picture
-        lambo1 = new plane(300,500);
+        lambo1 = new Car(300,600);
 
 
 	}// BasicGameApp()
@@ -105,7 +111,7 @@ public class BasicGameApp implements Runnable {
 
          moveThings();  //move all the game objects
          render();  // paint the graphics
-         pause(20); // sleep for 10 ms
+         pause(0); // sleep for 10 ms
 		}
 	}
 
@@ -114,6 +120,11 @@ public class BasicGameApp implements Runnable {
 	{
       //calls the move( ) code in the objects
 		aircraft.move();
+        aircraft1.move();
+        aircraft2.move();
+        aircraft3.move();
+        lambo1.move();
+        car.move();
 
 	}
 	
@@ -164,12 +175,13 @@ public class BasicGameApp implements Runnable {
 		g.clearRect(0, 0, WIDTH, HEIGHT);
 
       //draw the image of the aircraft
+        g.drawImage(backgroundPic, 0, 0, 1000, 700, null);
 		g.drawImage(a380Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
-        g.drawImage(a350Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
-        g.drawImage(b777Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
-        g.drawImage(b747Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
-        g.drawImage(lambo, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
-        g.drawImage(car1, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
+        g.drawImage(a350Pic, aircraft1.xpos, aircraft1.ypos, aircraft1.width, aircraft1.height, null);
+        g.drawImage(b777Pic, aircraft2.xpos, aircraft2.ypos, aircraft2.width, aircraft2.height, null);
+        g.drawImage(b747Pic, aircraft3.xpos, aircraft3.ypos, aircraft3.width, aircraft3.height, null);
+        g.drawImage(lambo, lambo1.xpos, lambo1.ypos, lambo1.width, lambo1.height, null);
+        g.drawImage(car1, car.xpos, car.ypos, 160, 120, null);
         g.dispose();
 
 		bufferStrategy.show();
