@@ -79,19 +79,19 @@ public class BasicGameApp implements Runnable {
       //create (construct) the objects needed for the game and load up
         backgroundPic = Toolkit.getDefaultToolkit().getImage("sky+road.jpg");
 		a380Pic = Toolkit.getDefaultToolkit().getImage("aqgame380.png"); //load the picture
-		aircraft = new Bounce(50,50);
+		aircraft = new Bounce(500,50);
         a350Pic = Toolkit.getDefaultToolkit().getImage("aq350.png"); //load the picture
         aircraft1 = new Bounce(30,150);
         b747Pic = Toolkit.getDefaultToolkit().getImage("747.png"); //load the picture
-        aircraft2 = new Bounce(10,300);
-
+        aircraft2 = new Bounce(110,300);
         b777Pic = Toolkit.getDefaultToolkit().getImage("2aq777.png"); //load the picture
-        aircraft3 = new Bounce(10,200);
-
+        aircraft3 = new Bounce(700,200);
         car1 = Toolkit.getDefaultToolkit().getImage("car1.png"); //load the picture
         car = new Car(0,600);
         lambo = Toolkit.getDefaultToolkit().getImage("lambo.png"); //load the picture
         lambo1 = new Car(300,600);
+
+
 
 
 	}// BasicGameApp()
@@ -127,6 +127,7 @@ public class BasicGameApp implements Runnable {
         car.move();
 
 	}
+
 	
    //Pauses or sleeps the computer for the amount specified in milliseconds
    public void pause(int time ){
@@ -182,6 +183,8 @@ public class BasicGameApp implements Runnable {
         g.drawImage(b747Pic, aircraft3.xpos, aircraft3.ypos, aircraft3.width, aircraft3.height, null);
         g.drawImage(lambo, lambo1.xpos, lambo1.ypos, lambo1.width, lambo1.height, null);
         g.drawImage(car1, car.xpos, car.ypos, 160, 120, null);
+        g.drawRect(car1.hitbox.x,car1.hitbox.y, car1.hitbox.width,car1.hitbox.height);
+        g.drawRect(lambo.hitbox.x,lambo.hitbox.y, lambo.hitbox.width,lambo.hitbox.height);
         g.dispose();
 
 		bufferStrategy.show();
