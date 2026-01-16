@@ -8,8 +8,8 @@ public class Car {
         public int ypos;                //the y position
         public int dx;                    //the speed of the hero in the x direction
         public int dy;                    //the speed of the hero in the y direction
-        public int width;
-        public int height;
+        public int width1;
+        public int height1;
         public boolean isAlive;//a boolean to denote if the hero is alive or dead.
         public Rectangle hitbox;
 
@@ -28,10 +28,10 @@ public class Car {
             ypos = pYpos;
             dx = 4;
             dy =0;
-            width = 150;
-            height = 60;
+            width1 = 150;
+            height1 = 60;
             isAlive = true;
-            hitbox = new Rectangle(xpos,ypos,width,height);
+            hitbox = new Rectangle(xpos,ypos,width1,height1);
 
         } // constructor
 
@@ -53,7 +53,7 @@ public class Car {
 
             xpos = xpos + dx;
             ypos = ypos + dy;
-            hitbox = new Rectangle(xpos,ypos,width,height);
+            hitbox = new Rectangle(xpos,ypos,width1,height1);
 
         }
     }

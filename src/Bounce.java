@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Bounce {
 
         //VARIABLE DECLARATION SECTION
@@ -9,6 +11,7 @@ public class Bounce {
         public int width;
         public int height;
         public boolean isAlive;//a boolean to denote if the hero is alive or dead.
+        public Rectangle bound;
 
 
 
@@ -46,6 +49,7 @@ public class Bounce {
             if(ypos > 680){
                 dy=-dy;
             }
+            bound = new Rectangle(xpos,ypos,width,height);
             xpos = xpos + dx;
             ypos = ypos + dy;
 

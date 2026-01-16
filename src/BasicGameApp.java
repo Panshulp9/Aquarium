@@ -125,8 +125,29 @@ public class BasicGameApp implements Runnable {
         aircraft3.move();
         lambo1.move();
         car.move();
+        crashing();
 
 	}
+    public void crashing(){
+        //if astronauts crash into each other
+        if(car1.hitbox.intersects(aircraft.bound)){
+            System.out.println("crash");
+            car1.dx=-car1.dx;
+            aircraft.dx=-aircraft.dx;
+            car1.dy=-car1.dy;
+            aircraft.dy=-aircraft.dy;
+            car1.isAlive = false;
+        }
+        if(car1.hitbox.intersects(aircraft.bound) && car1.isCrashing == false){
+            System.out.println("KABOOM!");
+            car1.height1 = car1.height1+10;
+            car1.isCrashing = true;
+        }
+        if (!lambo.hitbox.intersects(aircraft2.hitbox)){
+            lambo.isCrashing = false;
+        }
+
+    }
 
 	
    //Pauses or sleeps the computer for the amount specified in milliseconds
@@ -181,10 +202,12 @@ public class BasicGameApp implements Runnable {
         g.drawImage(a350Pic, aircraft1.xpos, aircraft1.ypos, aircraft1.width, aircraft1.height, null);
         g.drawImage(b777Pic, aircraft2.xpos, aircraft2.ypos, aircraft2.width, aircraft2.height, null);
         g.drawImage(b747Pic, aircraft3.xpos, aircraft3.ypos, aircraft3.width, aircraft3.height, null);
-        g.drawImage(lambo, lambo1.xpos, lambo1.ypos, lambo1.width, lambo1.height, null);
-        g.drawImage(car1, car.xpos, car.ypos, 160, 120, null);
-        g.drawRect(car1.hitbox.x,car1.hitbox.y, car1.hitbox.width,car1.hitbox.height);
-        g.drawRect(lambo.hitbox.x,lambo.hitbox.y, lambo.hitbox.width,lambo.hitbox.height);
+        g.drawImage(lambo, lambo1.xpos, lambo1.ypos, lambo1.width1, lambo1.height1, null);
+        g.drawImage(car1, car.xpos, car.ypos, car1.width1, car1.width1, null);
+        g.drawRect(car1.hitbox.x,car1.hitbox.y, car1.hitbox.width1,car1.hitbox.height1);
+        g.drawRect(lambo.hitbox.x,lambo.hitbox.y, lambo.hitbox.width1,lambo.hitbox.height1);
+        g.drawRect(aircraft.bound.x,aircraft.bound.y, aircraft.bound.width,aircraft.bound.height);
+        g.drawRect(aircraft2.bound.x,aircraft2.bound.y, aircraft2.bound.width,aircraft2.bound.height);
         g.dispose();
 
 		bufferStrategy.show();
