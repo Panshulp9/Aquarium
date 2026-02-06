@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cd23f18-2aa9-4d18-92d6-132b67874c1e" name="Changes" comment="Hitbox added to planes and cars">
+    <list default="true" id="3cd23f18-2aa9-4d18-92d6-132b67874c1e" name="Changes" comment="Hitboxes corrected">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasicGameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicGameApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bounce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bounce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +67,19 @@
       <recent name="C:\Users\pansh\OneDrive\Desktop\CS - 1\AQUARIUM" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="AQUARIUM" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="AQUARIUM" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3cd23f18-2aa9-4d18-92d6-132b67874c1e" name="Changes" comment="" />
@@ -120,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768593408949</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Hitboxes corrected">
+      <option name="closed" value="true" />
+      <created>1770349099234</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1770349099234</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -129,6 +153,7 @@
     <MESSAGE value="Planes are bouncing" />
     <MESSAGE value="Made hotbox" />
     <MESSAGE value="Hitbox added to planes and cars" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hitbox added to planes and cars" />
+    <MESSAGE value="Hitboxes corrected" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hitboxes corrected" />
   </component>
 </project>

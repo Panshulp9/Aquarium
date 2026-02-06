@@ -31,7 +31,7 @@ public class Bounce {
             width = 60;
             height = 60;
             isAlive = true;
-
+            bound = new Rectangle(xpos,ypos,width,height);
 
         } // constructor
 

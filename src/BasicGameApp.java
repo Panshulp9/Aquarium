@@ -71,8 +71,6 @@ public class BasicGameApp implements Runnable {
    // This section is the setup portion of the program
    // Initialize your variables and construct your program objects here.
 	public BasicGameApp() {
-        int randx = (int)(Math.random()*1000)+1;
-        int randy = (int)(Math.random()*700)+1;
       setUpGraphics();
        
       //variable and objects
@@ -115,8 +113,7 @@ public class BasicGameApp implements Runnable {
 		}
 	}
 
-	public void moveThings()
-	{
+	public void moveThings() {
       //calls the move( ) code in the objects
 		aircraft.move();
         aircraft1.move();
@@ -128,22 +125,17 @@ public class BasicGameApp implements Runnable {
 
 	}
     public void crashing(){
-        //if astronauts crash into each other
-        if(car1.hitbox.intersects(aircraft.bound)){
+        if(car.hitbox.intersects(aircraft.bound)){
             System.out.println("crash");
-            car1.dx=-car1.dx;
-            aircraft.dx=-aircraft.dx;
-            car1.dy=-car1.dy;
-            aircraft.dy=-aircraft.dy;
-            car1.isAlive = false;
+            car.dx=-car.dx;
+            car.dy=-car.dy;
         }
-        if(car1.hitbox.intersects(aircraft.bound) && car1.isCrashing == false){
+        if(lambo1.hitbox.intersects(aircraft2.bound)){
             System.out.println("KABOOM!");
-            car1.height1 = car1.height1+10;
-            car1.isCrashing = true;
-        }
-        if (!lambo.hitbox.intersects(aircraft2.hitbox)){
-            lambo.isCrashing = false;
+            lambo1.ypos = lambo1.ypos-1;
+            //lambo1.height1 = lambo1.height1-1;
+            //lambo1.width1 = lambo1.width1 - 1;
+
         }
 
     }
@@ -202,10 +194,10 @@ public class BasicGameApp implements Runnable {
         g.drawImage(b777Pic, aircraft2.xpos, aircraft2.ypos, aircraft2.width, aircraft2.height, null);
         g.drawImage(b747Pic, aircraft3.xpos, aircraft3.ypos, aircraft3.width, aircraft3.height, null);
         g.drawImage(lambo, lambo1.xpos, lambo1.ypos, lambo1.width1, lambo1.height1, null);
-        g.drawImage(car1, car.xpos, car.ypos, car1.width1, car1.width1, null);
-        g.drawRect(car1.hitbox.x,car1.hitbox.y, car1.hitbox.width1,car1.hitbox.height1);
-        g.drawRect(lambo.hitbox.x,lambo.hitbox.y, lambo.hitbox.width1,lambo.hitbox.height1);
-        g.drawRect(aircraft.bound.x,aircraft.bound.y, aircraft.bound.width,aircraft.bound.height);
+        g.drawImage(car1, car.xpos, car.ypos, car.width1, car.height1, null);
+        g.drawRect(car.hitbox.x,car.hitbox.y, car.hitbox.width,car.hitbox.height);
+        g.drawRect(lambo1.hitbox.x,lambo1.hitbox.y, lambo1.hitbox.width,lambo1.hitbox.height);
+        g.drawRect(aircraft.bound.x,aircraft.bound.y,aircraft.bound.width,aircraft.bound.height);
         g.drawRect(aircraft2.bound.x,aircraft2.bound.y, aircraft2.bound.width,aircraft2.bound.height);
         g.dispose();
 

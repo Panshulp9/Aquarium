@@ -29,7 +29,7 @@ public class Car {
             dx = 4;
             dy =0;
             width1 = 150;
-            height1 = 60;
+            height1 = 100;
             isAlive = true;
             hitbox = new Rectangle(xpos,ypos,width1,height1);
 
