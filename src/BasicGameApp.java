@@ -45,6 +45,7 @@ public class BasicGameApp implements Runnable {
     public Image lambo;
     public Image car1;
     public Image backgroundPic;
+    public Image bird;
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
@@ -54,6 +55,7 @@ public class BasicGameApp implements Runnable {
     public Bounce aircraft3;
     public Car car;
     public Car lambo1;
+    public Bird bird1;
 
 
 
@@ -88,6 +90,10 @@ public class BasicGameApp implements Runnable {
         car = new Car(0,600);
         lambo = Toolkit.getDefaultToolkit().getImage("lambo.png"); //load the picture
         lambo1 = new Car(300,600);
+        bird = Toolkit.getDefaultToolkit().getImage("bird.png");
+        bird1 = new Bird(300,470);
+
+
 
 
 
@@ -122,6 +128,7 @@ public class BasicGameApp implements Runnable {
         lambo1.move();
         car.move();
         crashing();
+        bird1.move();
 
 	}
     public void crashing(){
@@ -199,6 +206,8 @@ public class BasicGameApp implements Runnable {
         g.drawRect(lambo1.hitbox.x,lambo1.hitbox.y, lambo1.hitbox.width,lambo1.hitbox.height);
         g.drawRect(aircraft.bound.x,aircraft.bound.y,aircraft.bound.width,aircraft.bound.height);
         g.drawRect(aircraft2.bound.x,aircraft2.bound.y, aircraft2.bound.width,aircraft2.bound.height);
+        g.drawImage(bird, bird1.xpos, bird1.ypos, bird1.width2, bird1.height2, null);
+        g.drawRect(bird1.perimeter.x,bird1.perimeter.y, bird1.perimeter.width,bird1.perimeter.height);
         g.dispose();
 
 		bufferStrategy.show();
