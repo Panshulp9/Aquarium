@@ -13,8 +13,8 @@ public class Bird {
     public Bird(int pXpos, int pYpos) {
         xpos = pXpos;
         ypos = pYpos;
-        dx = 4;
-        dy =0;
+        dx = 3;
+        dy =2;
         width2 = 50;
         height2 = 100;
         isAlive = true;
@@ -33,7 +33,7 @@ public class Bird {
         if(ypos < 0) {
             dy=-dy;
         }
-        if(ypos > 680){
+        if(ypos > 500){
             dy=-dy;
         }
         //the cars and planes wrap when it hits the right and left walls

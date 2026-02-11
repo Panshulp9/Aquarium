@@ -46,6 +46,8 @@ public class BasicGameApp implements Runnable {
     public Image car1;
     public Image backgroundPic;
     public Image bird;
+    public boolean BirdStrike;
+    public Image strike;
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
@@ -92,6 +94,7 @@ public class BasicGameApp implements Runnable {
         lambo1 = new Car(300,600);
         bird = Toolkit.getDefaultToolkit().getImage("bird.png");
         bird1 = new Bird(300,470);
+        strike = Toolkit.getDefaultToolkit().getImage("KABOOM.png");
 
 
 
@@ -140,9 +143,29 @@ public class BasicGameApp implements Runnable {
         if(lambo1.hitbox.intersects(aircraft2.bound)){
             System.out.println("KABOOM!");
             lambo1.ypos = lambo1.ypos-1;
-            //lambo1.height1 = lambo1.height1-1;
-            //lambo1.width1 = lambo1.width1 - 1;
 
+        }
+        if(bird1.perimeter.intersects(aircraft3.bound)){
+            System.out.println("PLANE CRASH!");
+            BirdStrike = true;
+        }
+
+        if (bird1.perimeter.intersects(aircraft.bound)){
+            System.out.println("PLANE CRASH!");
+            BirdStrike = true;
+        }
+
+        if (bird1.perimeter.intersects(aircraft2.bound)){
+            System.out.println("PLANE CRASH!");
+            BirdStrike = true;
+        }
+
+        if (bird1.perimeter.intersects(aircraft1.bound)){
+            System.out.println("PLANE CRASH!");
+            BirdStrike = true;
+        }
+        if (!bird1.perimeter.intersects(aircraft1.bound)&&!bird1.perimeter.intersects(aircraft2.bound)&&!bird1.perimeter.intersects(aircraft.bound)&&!bird1.perimeter.intersects(aircraft3.bound)){
+            BirdStrike = false;
         }
 
     }
@@ -204,11 +227,21 @@ public class BasicGameApp implements Runnable {
         g.drawImage(car1, car.xpos, car.ypos, car.width1, car.height1, null);
         g.drawRect(car.hitbox.x,car.hitbox.y, car.hitbox.width,car.hitbox.height);
         g.drawRect(lambo1.hitbox.x,lambo1.hitbox.y, lambo1.hitbox.width,lambo1.hitbox.height);
+        if (lambo1.ypos == 90){
+            lambo1.ypos=690;
+        }
         g.drawRect(aircraft.bound.x,aircraft.bound.y,aircraft.bound.width,aircraft.bound.height);
         g.drawRect(aircraft2.bound.x,aircraft2.bound.y, aircraft2.bound.width,aircraft2.bound.height);
         g.drawImage(bird, bird1.xpos, bird1.ypos, bird1.width2, bird1.height2, null);
         g.drawRect(bird1.perimeter.x,bird1.perimeter.y, bird1.perimeter.width,bird1.perimeter.height);
+        g.drawRect(aircraft1.bound.x,aircraft1.bound.y, aircraft1.bound.width,aircraft1.bound.height);
+        g.drawRect(aircraft3.bound.x,aircraft3.bound.y, aircraft3.bound.width,aircraft3.bound.height);
+        if (BirdStrike){
+            g.drawImage(strike, bird1.xpos, bird1.ypos, 50, 70, null);
+        }
+
         g.dispose();
+
 
 		bufferStrategy.show();
 	}
