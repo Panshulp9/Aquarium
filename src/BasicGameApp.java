@@ -38,6 +38,7 @@ public class BasicGameApp implements Runnable {
    public JPanel panel;
    
 	public BufferStrategy bufferStrategy;
+    //make the variables for the images
 	public Image a380Pic;
     public Image b747Pic;
     public Image b777Pic;
@@ -48,6 +49,7 @@ public class BasicGameApp implements Runnable {
     public Image bird;
     public boolean BirdStrike;
     public Image strike;
+    public Image diss;
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
@@ -74,6 +76,7 @@ public class BasicGameApp implements Runnable {
    // This has the same name as the class
    // This section is the setup portion of the program
    // Initialize your variables and construct your program objects here.
+    //make all the images and set xpos and ypos
 	public BasicGameApp() {
       setUpGraphics();
        
@@ -95,6 +98,7 @@ public class BasicGameApp implements Runnable {
         bird = Toolkit.getDefaultToolkit().getImage("bird.png");
         bird1 = new Bird(300,470);
         strike = Toolkit.getDefaultToolkit().getImage("KABOOM.png");
+        diss = Toolkit.getDefaultToolkit().getImage("Screenshot 2026-02-12 165508.png");
 
 
 
@@ -134,6 +138,8 @@ public class BasicGameApp implements Runnable {
         bird1.move();
 
 	}
+    //makes all the effects of the car's movement with plane crash
+    //makes interaction of bird with plane
     public void crashing(){
         if(car.hitbox.intersects(aircraft.bound)){
             System.out.println("crash");
@@ -216,8 +222,7 @@ public class BasicGameApp implements Runnable {
 	private void render() {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.clearRect(0, 0, WIDTH, HEIGHT);
-
-      //draw the image of the aircraft
+      //draw the image of the aircraft,bird,car,and game over screen
         g.drawImage(backgroundPic, 0, 0, 1000, 700, null);
 		g.drawImage(a380Pic, aircraft.xpos, aircraft.ypos, aircraft.width, aircraft.height, null);
         g.drawImage(a350Pic, aircraft1.xpos, aircraft1.ypos, aircraft1.width, aircraft1.height, null);
@@ -227,9 +232,6 @@ public class BasicGameApp implements Runnable {
         g.drawImage(car1, car.xpos, car.ypos, car.width1, car.height1, null);
         g.drawRect(car.hitbox.x,car.hitbox.y, car.hitbox.width,car.hitbox.height);
         g.drawRect(lambo1.hitbox.x,lambo1.hitbox.y, lambo1.hitbox.width,lambo1.hitbox.height);
-        if (lambo1.ypos == 90){
-            lambo1.ypos=690;
-        }
         g.drawRect(aircraft.bound.x,aircraft.bound.y,aircraft.bound.width,aircraft.bound.height);
         g.drawRect(aircraft2.bound.x,aircraft2.bound.y, aircraft2.bound.width,aircraft2.bound.height);
         g.drawImage(bird, bird1.xpos, bird1.ypos, bird1.width2, bird1.height2, null);
@@ -238,6 +240,9 @@ public class BasicGameApp implements Runnable {
         g.drawRect(aircraft3.bound.x,aircraft3.bound.y, aircraft3.bound.width,aircraft3.bound.height);
         if (BirdStrike){
             g.drawImage(strike, bird1.xpos, bird1.ypos, 50, 70, null);
+        }
+        if (lambo1.ypos < 550){
+            g.drawImage(diss, 0, 0, 1000, 700, null);
         }
 
         g.dispose();

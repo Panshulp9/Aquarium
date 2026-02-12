@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cd23f18-2aa9-4d18-92d6-132b67874c1e" name="Changes" comment="Added bird">
-      <change afterPath="$PROJECT_DIR$/KABOOM.png" afterDir="false" />
+    <list default="true" id="3cd23f18-2aa9-4d18-92d6-132b67874c1e" name="Changes" comment="Made interactions with bird and aircraft">
+      <change afterPath="$PROJECT_DIR$/Screenshot 2026-02-12 165508.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BasicGameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicGameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bounce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bounce.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +63,7 @@
       <recent name="C:\Users\pansh\OneDrive\Desktop\CS - 1\Aquarium" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pansh\OneDrive\Desktop\CS - 1\Aquarium" />
       <recent name="C:\Users\pansh\OneDrive\Desktop\CS - 1\AQUARIUM" />
     </key>
   </component>
@@ -161,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770760582367</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Made interactions with bird and aircraft">
+      <option name="closed" value="true" />
+      <created>1770818549131</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770818549131</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -173,6 +180,7 @@
     <MESSAGE value="Hitboxes corrected" />
     <MESSAGE value="Hitboxes corrected and modifications to car size and ypos" />
     <MESSAGE value="Added bird" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added bird" />
+    <MESSAGE value="Made interactions with bird and aircraft" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made interactions with bird and aircraft" />
   </component>
 </project>

@@ -7,7 +7,7 @@ public class Bird {
     public int dy;                    //the speed of the hero in the y direction
     public int width2;
     public int height2;
-    public boolean isAlive;//a boolean to denote if the hero is alive or dead.
+    public boolean isAlive;            //a boolean to denote if the hero is alive or dead.
     public Rectangle perimeter;
 
     public Bird(int pXpos, int pYpos) {
