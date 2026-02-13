@@ -241,7 +241,7 @@ public class BasicGameApp implements Runnable {
         if (BirdStrike){
             g.drawImage(strike, bird1.xpos, bird1.ypos, 50, 70, null);
         }
-        if (lambo1.ypos < 550){
+        if (lambo1.ypos < 450){
             g.drawImage(diss, 0, 0, 1000, 700, null);
         }
 

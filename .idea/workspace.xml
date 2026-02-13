@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cd23f18-2aa9-4d18-92d6-132b67874c1e" name="Changes" comment="Made interactions with bird and aircraft">
-      <change afterPath="$PROJECT_DIR$/Screenshot 2026-02-12 165508.png" afterDir="false" />
+    <list default="true" id="3cd23f18-2aa9-4d18-92d6-132b67874c1e" name="Changes" comment="added final game over screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BasicGameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasicGameApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770818549131</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added final game over screen">
+      <option name="closed" value="true" />
+      <created>1770934263943</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1770934263943</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -181,6 +187,7 @@
     <MESSAGE value="Hitboxes corrected and modifications to car size and ypos" />
     <MESSAGE value="Added bird" />
     <MESSAGE value="Made interactions with bird and aircraft" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made interactions with bird and aircraft" />
+    <MESSAGE value="added final game over screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="added final game over screen" />
   </component>
 </project>
